@@ -23,15 +23,14 @@ class App extends Component {
 
   submit = (e) => {
     e.preventDefault();
-    const correctWord = "digit";
-    if(this.state.input === correctWord && this.state.timer <= 0 ){
-      console.log("wohoo")
+    const correctWord = "ohje";
+    const userInput = this.state.input.toLowerCase();
+    if(userInput === correctWord && this.state.timer <= 0 ){
       this.setState(
         { input : "", 
           success: true
         })
     } else {
-      console.log("bähää")
       this.setState({timeout:new Date(Date.now() + 30000)});
     }
   }
